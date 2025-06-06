@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV/Resume Builder - Mayur Nagrare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>CV/Resume Builder</h1>
+    </header>
+
+    <div class="container">
+        <div class="input-section">
+            <h2>Enter Your Details</h2>
+            <form id="resumeForm">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <input type="text" id="name" placeholder="Full Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="tel" id="phone" placeholder="Phone Number">
+                    <input type="url" id="linkedin" placeholder="LinkedIn Profile URL">
+                    <input type="url" id="github" placeholder="GitHub Profile URL">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Summary/Objective</legend>
+                    <textarea id="summary" placeholder="A concise summary of your skills and goals."></textarea>
+                </fieldset>
+
+                <fieldset id="educationSection">
+                    <legend>Education</legend>
+                    <div class="education-item">
+                        <input type="text" class="degree" placeholder="Degree/Course (e.g., B.Tech Computer Science)">
+                        <input type="text" class="university" placeholder="University/Institution">
+                        <input type="text" class="edu-dates" placeholder="Dates Attended (e.g., 2018 - 2022)">
+                        <textarea class="edu-details" placeholder="Relevant coursework, honors, or achievements"></textarea>
+                        <button type="button" class="remove-item-btn">Remove</button>
+                    </div>
+                    <button type="button" id="addEducation">Add Education</button>
+                </fieldset>
+
+                <fieldset id="experienceSection">
+                    <legend>Work Experience</legend>
+                    <div class="experience-item">
+                        <input type="text" class="job-title" placeholder="Job Title (e.g., Software Engineer)">
+                        <input type="text" class="company" placeholder="Company Name">
+                        <input type="text" class="exp-dates" placeholder="Dates (e.g., Jan 2022 - Present)">
+                        <textarea class="responsibilities" placeholder="Key responsibilities and achievements (use bullet points)"></textarea>
+                        <button type="button" class="remove-item-btn">Remove</button>
+                    </div>
+                    <button type="button" id="addExperience">Add Experience</button>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Skills</legend>
+                    <input type="text" id="skills" placeholder="Comma-separated skills (e.g., Python, JavaScript, React, Git)">
+                </fieldset>
+
+                <button type="button" id="generateResume">Generate / Update Resume</button>
+                <button type="button" id="downloadResume">Download as PDF (Browser Print)</button>
+                <button type="button" id="exportData">Export Data (JSON)</button>
+                <input type="file" id="importData" accept=".json" style="display:none;">
+                <button type="button" id="importDataBtn">Import Data (JSON)</button>
+            </form>
+        </div>
+
+        <div class="preview-section">
+            <h2>Resume Preview</h2>
+            <div id="resumePreview" class="resume-template">
+                <div class="template-header">
+                    <h2 id="previewName">Your Name</h2>
+                    <p id="previewContact"></p>
+                    <p id="previewLinks"></p>
+                </div>
+                <div class="template-section">
+                    <h3>Summary</h3>
+                    <p id="previewSummary"></p>
+                </div>
+                <div class="template-section">
+                    <h3>Education</h3>
+                    <ul id="previewEducation"></ul>
+                </div>
+                <div class="template-section">
+                    <h3>Experience</h3>
+                    <ul id="previewExperience"></ul>
+                </div>
+                <div class="template-section">
+                    <h3>Skills</h3>
+                    <p id="previewSkills"></p>
+                </div>
+                </div>
+        </div>
+    </div>
+
+    <footer>
+        Created by Mayur Nagrare
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
